@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Supprime la scrollbar sur les navigateurs Webkit (Chrome/Safari) */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  /* Supprime la scrollbar sur Firefox et Edge */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes infinite-scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 1.5s linear infinite;
+}
